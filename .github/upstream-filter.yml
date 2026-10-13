@@ -1,0 +1,97 @@
+# Per-service upstream filter config (ADR-038), planted at fork initialization
+# with <service> substituted from the upstream repository name.
+# Every upstream top-level entry, testing/ entry, root pom profile, and
+# .fossa.yml module must appear here: the engine halts rather than guess.
+# Entries absent from a given upstream tree are inert, so this file carries the
+# superset of the conventional OSDU service shape. A service that deviates
+# maintains its own copy of this file on the fork's main branch.
+service: workflow
+
+top_level:
+  .config: keep
+  .dockerignore: keep
+  .editorconfig: keep
+  .envrc.template: keep
+  .fossa.yml: keep
+  .gitattributes: keep
+  .gitignore: keep
+  .gitlab: strip
+  .gitlab-ci.yml: strip
+  .mvn: keep
+  .sonarlint: keep
+  .trufflehog-exclude: strip
+  Dockerfile: strip
+  LICENSE: keep
+  NOTICE: keep
+  README.md: strip
+  docs: keep
+  img: keep
+  lombok.config: keep
+  maven: keep
+  pom.xml: keep
+  publish.yml: strip
+  workflow-acceptance-test: keep
+  workflow-core: keep
+  workflow-core-plus: strip
+
+testing:
+  INTEGRATION-TESTS.md: keep
+  README.md: keep
+  maven: keep
+  pom.xml: keep
+  workflow-test-core: keep
+  workflow-test-azure: fork
+  workflow-test-aws: strip
+  workflow-test-baremetal: strip
+  workflow-test-core-plus: strip
+  workflow-test-gc: strip
+  workflow-test-gcp: strip
+  workflow-test-ibm: strip
+  workflow-test-jdbc: strip
+
+profiles:
+  Default: keep
+  core: keep
+  azure: inject
+  aws: strip
+  gc: strip
+  gcp: strip
+  ibm: strip
+
+fossa_modules:
+  os-workflow: keep
+  workflow: keep
+  workflow-service: keep
+  workflow-core: keep
+  workflow-core-plus: strip
+  workflow-azure: strip
+  workflow-aws: strip
+  workflow-gc: strip
+  workflow-gcp: strip
+  workflow-ibm: strip
+  workflow-jdbc: strip
+
+expected_kept:
+  - pom.xml
+  - workflow-core
+  - testing/workflow-test-core
+
+expected_absent:
+  - provider
+  - devops
+  - workflow-core-plus
+  - .gitlab-ci.yml
+  - testing/workflow-test-azure
+  - testing/workflow-test-aws
+  - testing/workflow-test-core-plus
+
+inject_root_pom_azure_profile: |
+      <profile>
+        <id>azure</id>
+        <modules>
+          <module>provider/workflow-azure</module>
+        </modules>
+      </profile>
+
+inject_testing_pom_azure_module: |
+      <module>workflow-test-azure</module>
