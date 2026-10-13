@@ -1,4 +1,0 @@
-variables:
-  CIMPL_SERVICE: workflow
-  CIMPL_ENABLE_BOOTSTRAP: "true"
-  DISABLE_INTEGRATION_TEST: true

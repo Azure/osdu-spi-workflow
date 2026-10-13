@@ -555,19 +555,12 @@
       </activation>
       <modules>
         <module>workflow-core</module>
-        <module>workflow-core-plus</module>
       </modules>
     </profile>
     <profile>
       <id>azure</id>
       <modules>
         <module>provider/workflow-azure</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>ibm</id>
-      <modules>
-        <module>provider/workflow-ibm</module>
       </modules>
     </profile>
   </profiles>
