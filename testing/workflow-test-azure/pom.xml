@@ -33,7 +33,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.main.basedir>${project.basedir}</project.main.basedir>
-        <jackson.version>2.13.2</jackson.version>
+        <jackson.version>2.13.5</jackson.version>
         <skipTests>false</skipTests>
         <test.data.file.name>testData.json</test.data.file.name>
         <test.data.directory>${project.build.directory}</test.data.directory>
@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>5.3.23</version>
+            <version>5.3.39</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -109,12 +109,12 @@
     <dependency>
       <groupId>com.azure</groupId>
       <artifactId>azure-storage-blob</artifactId>
-      <version>12.10.0</version>
+      <version>12.10.2</version>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
-      <version>4.1.101.Final</version>
+      <version>4.1.139.Final</version>
     </dependency>
     <dependency>
       <groupId>org.opengroup.osdu</groupId>
@@ -123,7 +123,7 @@
       <dependency>
         <groupId>org.freemarker</groupId>
         <artifactId>freemarker</artifactId>
-        <version>2.3.30</version>
+        <version>2.3.35</version>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
