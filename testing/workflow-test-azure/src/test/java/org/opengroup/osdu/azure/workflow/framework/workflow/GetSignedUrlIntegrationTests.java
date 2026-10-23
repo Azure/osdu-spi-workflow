@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.sun.jersey.api.client.ClientResponse;
 import org.apache.http.HttpStatus;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.opengroup.osdu.azure.workflow.framework.util.HTTPClient;
 import org.opengroup.osdu.azure.workflow.framework.util.AzureTestBase;
@@ -42,6 +43,7 @@ public abstract class GetSignedUrlIntegrationTests extends AzureTestBase {
   protected Map<String, String> workflowRunInfo = null;
 
   @Test
+  @Disabled("SPI stack partitions do not set ingest-storage-account-name")
   public void should_returnSuccess_when_givenValidRequest() throws Exception {
     ClientResponse response = client.send(
         HttpMethod.GET,
