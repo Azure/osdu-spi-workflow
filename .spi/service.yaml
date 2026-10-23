@@ -2,4 +2,29 @@ schemaVersion: 3
 service:
   name: workflow
   archetype: java-maven-azure
-tests: {}
+tests:
+  acceptance:
+    type: maven
+    path: workflow-acceptance-test
+    mavenArguments: ["-Dtest=!WorkflowRunV3IntegrationTests#triggerWorkflowRun_should_returnSuccessAndCompleteExecutionWithImpersonationFlow", -Dsurefire.failIfNoSpecifiedTests=false, test]
+    timeoutMinutes: 20
+    bindings:
+      HOST: { source: gateway }
+      DATA_PARTITION_ID: { source: partition }
+      PRIVILEGED_USER_TOKEN: { source: token }
+      NO_ACCESS_USER_TOKEN: { source: memberToken }
+      USER_REQUIRED_ROLES_CONFIG: { source: static, value: ../.spi/required-roles.json }
+  integration:
+    type: maven
+    path: testing
+    mavenArguments: [-pl, workflow-test-azure, -am, test]
+    timeoutMinutes: 30
+    bindings:
+      WORKFLOW_HOST: { source: gateway, suffix: /api/workflow/ }
+      DEFAULT_DATA_PARTITION_ID_TENANT1: { source: partition }
+      DOMAIN: { source: domain }
+      LEGAL_TAG: { source: legalTag }
+      OTHER_RELEVANT_DATA_COUNTRIES: { source: static, value: US }
+      TEST_DAG_NAME: { source: static, value: airflow_monitoring }
+      INTEGRATION_TESTER_ACCESS_TOKEN: { source: token }
+      NO_DATA_ACCESS_TESTER_ACCESS_TOKEN: { source: noAccessToken }

@@ -31,6 +31,11 @@ public class HTTPClientAzure extends HTTPClient {
   @Override
   public synchronized String getAccessToken() throws Exception {
     if (Strings.isNullOrEmpty(accessToken)) {
+      String suppliedToken = System.getProperty("INTEGRATION_TESTER_ACCESS_TOKEN", System.getenv("INTEGRATION_TESTER_ACCESS_TOKEN"));
+      if (!Strings.isNullOrEmpty(suppliedToken)) {
+        accessToken = suppliedToken;
+        return "Bearer " + accessToken;
+      }
       String sp_id = System.getProperty("INTEGRATION_TESTER", System.getenv("INTEGRATION_TESTER"));
       String sp_secret = System.getProperty("TESTER_SERVICEPRINCIPAL_SECRET", System.getenv("TESTER_SERVICEPRINCIPAL_SECRET"));
       String tenant_id = System.getProperty("AZURE_AD_TENANT_ID", System.getenv("AZURE_AD_TENANT_ID"));
@@ -43,6 +48,11 @@ public class HTTPClientAzure extends HTTPClient {
   @Override
   public synchronized String getNoDataAccessToken() throws Exception {
     if (Strings.isNullOrEmpty(noDataAccessToken)) {
+      String suppliedToken = System.getProperty("NO_DATA_ACCESS_TESTER_ACCESS_TOKEN", System.getenv("NO_DATA_ACCESS_TESTER_ACCESS_TOKEN"));
+      if (!Strings.isNullOrEmpty(suppliedToken)) {
+        noDataAccessToken = suppliedToken;
+        return "Bearer " + noDataAccessToken;
+      }
       String sp_id = System.getProperty("NO_DATA_ACCESS_TESTER", System.getenv("NO_DATA_ACCESS_TESTER"));
       String sp_secret = System.getProperty("NO_DATA_ACCESS_TESTER_SERVICEPRINCIPAL_SECRET", System.getenv("NO_DATA_ACCESS_TESTER_SERVICEPRINCIPAL_SECRET"));
       String tenant_id = System.getProperty("AZURE_AD_TENANT_ID", System.getenv("AZURE_AD_TENANT_ID"));
