@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.3.1](https://github.com/Azure/osdu-spi-workflow/compare/v1.3.0...v1.3.1) (2026-10-23)
+
+
+### 🐛 Bug Fixes
+
+* [Venus] Verify the deployed revision in Workflow acceptance tests ([#561](https://github.com/Azure/osdu-spi-workflow/issues/561)) ([90d2d42](https://github.com/Azure/osdu-spi-workflow/commit/90d2d42e2bae07d2431b34a47cf8a485f994a25b))
+* **azure:** Bump core-lib-azure to 3.0.1 for single token scope ([262e35d](https://github.com/Azure/osdu-spi-workflow/commit/262e35d91fe6740a32007a5528ac97a0c59c9267))
+* **azure:** Bump core-lib-azure to 3.0.1 for single token scope ([57d41cd](https://github.com/Azure/osdu-spi-workflow/commit/57d41cd03d432f034f9d5317df1237b1297df0e6))
+* **azure:** Decode istio x-payload as base64url ([37107ca](https://github.com/Azure/osdu-spi-workflow/commit/37107ca94feb22ba033611f2560872449e176261))
+* **azure:** Decode istio x-payload as base64url ([c8841cc](https://github.com/Azure/osdu-spi-workflow/commit/c8841cc8d6215960af7bf50650bfb173bbdcc516))
+* Sync upstream changes from 54518806 ([612f7ee](https://github.com/Azure/osdu-spi-workflow/commit/612f7ee34774876d60874f62a47769e10d5c5da3))
+
+
+### 🔧 Miscellaneous
+
+* Generate filtered upstream tree ([9591d47](https://github.com/Azure/osdu-spi-workflow/commit/9591d47fb757094019a3696d232b375667cd52d6))
+* Stamp fork-owned pom versions ([7f9c6ba](https://github.com/Azure/osdu-spi-workflow/commit/7f9c6baa561f0fe5db7c0a98173d90031d50f230))
+* Sync template updates ([b9e3a74](https://github.com/Azure/osdu-spi-workflow/commit/b9e3a74d6bf483c430c1838fe09439dd710dfe55))
+* **template-sync:** Sync template updates (updated 2026-10-22) ([141ffd9](https://github.com/Azure/osdu-spi-workflow/commit/141ffd9e61f20593fbc23483b50cf30a677e5bcb))
+* Update NOTICE from fossa-check-notice ([c9e8e51](https://github.com/Azure/osdu-spi-workflow/commit/c9e8e519b2526a68b085993732ef6ca733c9ae2e))
+
+
+### 🧪 Tests
+
+* **azure:** Remove disabled and unused workflow integration tests ([74c2e3f](https://github.com/Azure/osdu-spi-workflow/commit/74c2e3f643b1be1bec52f32c8f33b384c9b972e7))
+* **azure:** Remove workflow integration tests that never run ([54dd8af](https://github.com/Azure/osdu-spi-workflow/commit/54dd8af627043ddcc5a932c71c3bd2717ef727e3))
+* **spi:** Configure acceptance and integration suites ([3d40e96](https://github.com/Azure/osdu-spi-workflow/commit/3d40e96b90fbd90268a383ed013286347dc1136b))
+* **spi:** Run acceptance and integration suites on the stack ([302aa40](https://github.com/Azure/osdu-spi-workflow/commit/302aa40f16d2cd9a4474818bfbba6fb54aee4815))
+
+
+### 🔨 Build System
+
+* **deps-dev:** Bump org.slf4j:slf4j-jdk14 ([4c3daf6](https://github.com/Azure/osdu-spi-workflow/commit/4c3daf66328b102618ff9ec49295b4bf898eda69))
+* **deps-dev:** Bump org.slf4j:slf4j-jdk14 from 1.7.25 to 1.7.36 in /testing/workflow-test-azure ([73dfcc1](https://github.com/Azure/osdu-spi-workflow/commit/73dfcc110df3c9d3bc4d94ade1cffc51a387e53e))
+
 ## [1.3.0](https://github.com/Azure/osdu-spi-workflow/compare/v1.2.0...v1.3.0) (2026-10-14)
 
 
