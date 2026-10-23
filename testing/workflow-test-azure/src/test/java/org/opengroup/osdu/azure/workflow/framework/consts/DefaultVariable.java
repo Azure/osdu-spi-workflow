@@ -26,10 +26,7 @@ public enum DefaultVariable {
 	LEGAL_TAG(""),
 	OTHER_RELEVANT_DATA_COUNTRIES(""),
 
-	FINISHED_WORKFLOW_ID(""),
-	DAG_ACTIVATION_TIME("360"),
-	TEST_DATA_DIRECTORY(""),
-	TEST_DATA_FILE_NAME("testData.json");
+	FINISHED_WORKFLOW_ID("");
 
 
 	public static String getEnvironmentVariableOrDefaultKey(DefaultVariable key){
