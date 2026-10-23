@@ -20,7 +20,6 @@ import com.sun.jersey.api.client.ClientResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
 import org.opengroup.osdu.azure.workflow.framework.exception.RetryException;
-import org.opengroup.osdu.azure.workflow.framework.models.WorkflowRun;
 
 import javax.ws.rs.HttpMethod;
 import java.util.HashMap;
@@ -30,14 +29,8 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.opengroup.osdu.azure.workflow.framework.consts.TestConstants.FINISHED_WORKFLOW_RUN_STATUSES;
 import static org.opengroup.osdu.azure.workflow.framework.consts.TestConstants.GET_WORKFLOW_RUN_URL;
-import static org.opengroup.osdu.azure.workflow.framework.consts.TestConstants.CREATE_WORKFLOW_RUN_URL;
-import static org.opengroup.osdu.azure.workflow.framework.consts.TestDAGNames.TEST_DUMMY_DAG;
-import static org.opengroup.osdu.azure.workflow.framework.util.TestDataUtil.getWorkflow;
-import static org.opengroup.osdu.azure.workflow.framework.util.TriggerWorkflowTestsBuilder.buildTriggerWorkflowPayload;
-import static org.opengroup.osdu.azure.workflow.framework.util.TriggerWorkflowTestsBuilder.getWorkflowRunIdFromPayload;
 
 @Slf4j
 public abstract class TestBase {
@@ -158,26 +151,5 @@ public abstract class TestBase {
       throw new Exception(String.format("Error getting status for workflow run id %s",
           workflowRunId));
     }
-  }
-
-  public WorkflowRun triggerDummyWorkflow(HTTPClient client, Map<String, String> headers)
-      throws Exception {
-    String workflowId = getWorkflow(TEST_DUMMY_DAG)
-        .get(CreateWorkflowTestsBuilder.WORKFLOW_ID_FIELD).getAsString();
-    Map<String, Object> triggerWorkflowPayload = buildTriggerWorkflowPayload();
-
-    ClientResponse response = client.send(
-        HttpMethod.POST,
-        String.format(CREATE_WORKFLOW_RUN_URL, workflowId),
-        gson.toJson(triggerWorkflowPayload),
-        headers,
-        client.getAccessToken()
-    );
-
-    assertEquals(HttpStatus.SC_OK, response.getStatus(), response.toString());
-
-    trackTriggeredWorkflowRun(workflowId, getWorkflowRunIdFromPayload(triggerWorkflowPayload));
-
-    return gson.fromJson(response.getEntity(String.class), WorkflowRun.class);
   }
 }

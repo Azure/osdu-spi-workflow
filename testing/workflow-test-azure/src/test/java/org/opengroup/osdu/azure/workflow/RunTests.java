@@ -14,15 +14,11 @@
 package org.opengroup.osdu.azure.workflow;
 
 import org.junit.platform.runner.JUnitPlatform;
-import org.junit.platform.suite.api.ExcludeClassNamePatterns;
 import org.junit.platform.suite.api.SelectPackages;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectPackages({"org.opengroup.osdu.azure.workflow.workflow", "org.opengroup.osdu.azure.workflow.v3", "org.opengroup.osdu.azure.workflow.operators"})
-@ExcludeClassNamePatterns({"org.opengroup.osdu.azure.workflow.workflow.TestPostGetStatusIntegration",
-    "org.opengroup.osdu.azure.workflow.workflow.TestPostStartWorkflowIntegration",
-    "org.opengroup.osdu.azure.workflow.workflow.TestPostUpdateStatusIntegration"})
 public class RunTests {
 
 }
