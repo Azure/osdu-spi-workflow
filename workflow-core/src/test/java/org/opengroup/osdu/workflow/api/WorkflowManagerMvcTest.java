@@ -52,12 +52,13 @@ import org.opengroup.osdu.workflow.model.WorkflowMetadata;
 import org.opengroup.osdu.workflow.model.WorkflowRole;
 import org.opengroup.osdu.workflow.provider.interfaces.IAdminAuthorizationService;
 import org.opengroup.osdu.workflow.provider.interfaces.IWorkflowManagerService;
+import org.opengroup.osdu.workflow.config.WebConfiguration;
 import org.opengroup.osdu.workflow.security.AuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpHeaders;
@@ -83,7 +84,7 @@ import org.springframework.web.context.WebApplicationContext;
 @WebMvcTest(WorkflowManagerApi.class)
 @AutoConfigureMockMvc
 @ExtendWith(SpringExtension.class)
-@Import({AuthorizationFilter.class, DpsHeaders.class})
+@Import({AuthorizationFilter.class, DpsHeaders.class, WebConfiguration.class})
 public class WorkflowManagerMvcTest {
   private static final String TEST_AUTH = "Bearer bla";
   private static final String PARTITION = "partition";
@@ -128,22 +129,22 @@ public class WorkflowManagerMvcTest {
 
   private ObjectMapper mapper = new ObjectMapper();
 
-  @MockBean
+  @MockitoBean
   private IWorkflowManagerService workflowManagerService;
 
-  @MockBean
+  @MockitoBean
   private IAuthorizationService authorizationService;
 
-  @MockBean
+  @MockitoBean
   private IAdminAuthorizationService adminAuthorizationService;
 
-  @MockBean
+  @MockitoBean
   private JaxRsDpsLog log;
 
-  @MockBean
+  @MockitoBean
   private DpsHeaders dpsHeaders;
 
-  @MockBean
+  @MockitoBean
   private AuthorizationResponse authorizationResponse;
 
   @InjectMocks

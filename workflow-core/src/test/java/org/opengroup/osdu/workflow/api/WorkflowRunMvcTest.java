@@ -13,19 +13,19 @@ import org.opengroup.osdu.workflow.model.UpdateWorkflowRunRequest;
 import org.opengroup.osdu.workflow.model.WorkflowRole;
 import org.opengroup.osdu.workflow.model.WorkflowRunResponse;
 import org.opengroup.osdu.workflow.provider.interfaces.IAdminAuthorizationService;
+import org.opengroup.osdu.workflow.config.WebConfiguration;
 import org.opengroup.osdu.workflow.security.AuthorizationFilter;
 import org.opengroup.osdu.workflow.model.TriggerWorkflowRequest;
 import org.opengroup.osdu.workflow.provider.interfaces.IWorkflowRunService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -57,7 +57,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @WebMvcTest(WorkflowRunApi.class)
 @AutoConfigureMockMvc
-@Import({AuthorizationFilter.class, DpsHeaders.class})
+@Import({AuthorizationFilter.class, DpsHeaders.class, WebConfiguration.class})
 class WorkflowRunMvcTest {
   private static final String TEST_AUTH = "Bearer bla";
   private static final String PARTITION = "partition";
@@ -110,19 +110,19 @@ class WorkflowRunMvcTest {
   @Autowired
   private ObjectMapper mapper;
 
-  @MockBean
+  @MockitoBean
   private IWorkflowRunService workflowRunService;
-  @MockBean
+  @MockitoBean
   private IAuthorizationService authorizationService;
-  @MockBean
+  @MockitoBean
   private IAdminAuthorizationService adminAuthorizationService;
-  @MockBean
+  @MockitoBean
   private RestExceptionHandler restExceptionHandler;
-  @MockBean
+  @MockitoBean
   private DpsHeaders dpsHeaders;
-  @MockBean
+  @MockitoBean
   private JaxRsDpsLog logger;
-  @MockBean
+  @MockitoBean
   private AuthorizationResponse authorizationResponse;
 
   @Test

@@ -21,8 +21,10 @@ import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import java.io.IOException;
-import org.springframework.boot.jackson.JsonComponent;
+import org.springframework.boot.jackson2.JsonComponent;
 
+// Registered with Spring Boot 4's Jackson 2 ObjectMapper, which the release keeps for HTTP message conversion.
+@SuppressWarnings({"removal", "java:S5738"})
 @JsonComponent
 public class ForceStringDeserializer extends JsonDeserializer<String> {
 
