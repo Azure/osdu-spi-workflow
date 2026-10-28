@@ -1,10 +1,10 @@
-FROM google/cloud-sdk:alpine
+FROM alpine/curl:8.22.0
 
 WORKDIR /opt
 
 COPY workflow-core-plus/bootstrap/ /opt/
 
-RUN apk add jq
+RUN apk upgrade --no-cache && apk add --no-cache jq bash
 RUN chmod +x bootstrap.sh
 
 RUN addgroup -g 10001 -S nonroot \
