@@ -1,6 +1,6 @@
 package org.opengroup.osdu.workflow.provider.azure;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -21,14 +21,13 @@ import org.opengroup.osdu.workflow.provider.azure.model.customoperator.CustomOpe
 import org.opengroup.osdu.workflow.provider.azure.model.customoperator.RegisterCustomOperatorRequest;
 import org.opengroup.osdu.workflow.security.AuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -121,16 +120,16 @@ public class CustomOperatorMvcTest {
   @Autowired
   private ObjectMapper mapper;
 
-  @MockBean
+  @MockitoBean
   private ICustomOperatorService customOperatorService;
 
-  @MockBean
+  @MockitoBean
   private IWorkflowTasksSharingService workflowTasksSharingService;
 
-  @MockBean
+  @MockitoBean
   private IAuthorizationService authorizationService;
 
-  @MockBean
+  @MockitoBean
   private JaxRsDpsLog log;
 
   @Mock

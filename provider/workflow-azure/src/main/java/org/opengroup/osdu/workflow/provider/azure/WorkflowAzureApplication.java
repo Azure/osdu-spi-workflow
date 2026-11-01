@@ -16,6 +16,7 @@ package org.opengroup.osdu.workflow.provider.azure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.security.autoconfigure.UserDetailsServiceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.PropertySource;
@@ -33,7 +34,7 @@ import org.springframework.context.annotation.PropertySource;
     }
 )
 
-@SpringBootApplication
+@SpringBootApplication(exclude = UserDetailsServiceAutoConfiguration.class)
 @PropertySource("classpath:swagger.properties")
 public class WorkflowAzureApplication {
   public static void main(String[] args) {

@@ -54,7 +54,7 @@ public class RunDetailsApi {
         @ApiResponse(
             responseCode = "200",
             description = "Workflow execution details of the latest task.",
-            content = {@Content(schema = @Schema(implementation = Object.class))}),
+            content = {@Content(schema = @Schema(type = "object"))}),
         @ApiResponse(
             responseCode = "400",
             description = "Bad Request",

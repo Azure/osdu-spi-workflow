@@ -32,10 +32,10 @@ import static org.opengroup.osdu.workflow.service.AirflowV2WorkflowEngineExtensi
 import static org.opengroup.osdu.workflow.service.AirflowV2WorkflowEngineExtension.XCOM_ENTRIES;
 import static org.opengroup.osdu.workflow.service.AirflowV2WorkflowEngineExtension.XCOM_VALUES;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.node.ObjectNode;
 import com.sun.jersey.api.client.Client;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -100,7 +100,7 @@ public class IWorkflowEngineExtensionTest {
   @InjectMocks AirflowV2WorkflowEngineExtension engineExtension;
 
   @Test
-  void testGetLastDetails() throws JsonProcessingException {
+  void testGetLastDetails() throws JacksonException {
     ClientResponse tasksResponse =
         ClientResponse.builder()
             .responseBody(readRespBodyFromFile(AIRFLOW_RESPONSES_TASK_INSTANCES_JSON))
@@ -166,7 +166,7 @@ public class IWorkflowEngineExtensionTest {
    */
   @Test
   void getLatestTaskDetails_xcomKeyWithReservedChars_buildsUriSafeEndpoint()
-      throws JsonProcessingException {
+      throws JacksonException {
     String tasksEndpoint = format(TASK_INSTANCES, WORKFLOW_NAME, DAG_RUN_ID);
     String xcomEntriesEndpoint = format(XCOM_ENTRIES, WORKFLOW_NAME, DAG_RUN_ID, LAST_TASK_ID);
     String xcomKeysBody =

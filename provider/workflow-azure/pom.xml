@@ -45,7 +45,44 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-<dependency>
+      <!-- Re-import the patched Jackson / Spring BOMs first: imports are first-wins, and the
+           core-lib-azure BOM would otherwise pull the module back to Spring Boot 3.5 / Spring 6 -->
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${jackson-2-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>tools.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${jackson-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-bom</artifactId>
+        <version>${spring-security.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-framework-bom</artifactId>
+        <version>${spring-framework.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>org.opengroup.osdu</groupId>
         <artifactId>core-lib-azure</artifactId>
         <version>${core-lib-azure.version}</version>
@@ -66,6 +103,24 @@
       <groupId>org.opengroup.osdu</groupId>
       <artifactId>core-lib-azure</artifactId>
       <version>${core-lib-azure.version}</version>
+      <exclusions>
+        <!-- Boot 4 renamed spring-boot-starter-aop; avoid the unmanaged Boot 3.5 starter -->
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-aspectj</artifactId>
+      <exclusions>
+        <!-- core-lib-azure logs through log4j2 (spring-boot-starter-log4j2) -->
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!--
         os-core-common 7.0.0 declares lettuce-core as provided. workflow-azure imports
@@ -99,6 +154,8 @@
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <!-- core-lib-azure manages springdoc 2.x (Spring Boot 3) -->
+      <version>${openapi.version}</version>
     </dependency>
 
 
@@ -126,6 +183,11 @@
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webmvc-test</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
