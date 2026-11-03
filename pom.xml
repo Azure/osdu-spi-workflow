@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.8</version>
+    <version>4.0.9</version>
     <relativePath/>
   </parent>
 
@@ -47,21 +47,21 @@
     <swagger-core.version>2.2.47</swagger-core.version>
     <json-smart.version>2.6.0</json-smart.version>
     <!-- Spring Framework 7.0.9 fixes CVE-2026-47884 / CVE-2026-47890 (no 6.2.x fix) -->
-    <spring-framework.version>7.0.9</spring-framework.version>
+    <spring-framework.version>7.0.10</spring-framework.version>
     <!-- spring-boot.version must match the parent version -->
-    <spring-boot.version>4.0.8</spring-boot.version>
+    <spring-boot.version>4.0.9</spring-boot.version>
     <spring-security.version>7.0.7</spring-security.version>
-    <!-- Override Spring Boot 4.0.8's Tomcat 11.0.24 with the latest patched 11.0.x -->
-    <tomcat.version>11.0.26</tomcat.version>
+    <!-- Override Spring Boot 4.0.9's Tomcat 11.0.24 with the latest patched 11.0.x -->
+    <tomcat.version>11.0.27</tomcat.version>
     <!-- os-core-common declares lettuce-core as provided; CVE-2025-58057 requires >= 7.5.2.RELEASE -->
     <lettuce.version>7.5.2.RELEASE</lettuce.version>
     <!-- lettuce-core 7.x requires Netty 4.2+; 4.2.18.Final addresses High findings still present on 4.2.16/4.2.17 -->
-    <netty.version>4.2.18.Final</netty.version>
+    <netty.version>4.2.19.Final</netty.version>
     <!-- Patched Jackson 2 (third-party SDKs) and Jackson 3 (Spring Boot 4 default); these are the
          spring-boot-dependencies property names, so they also override the parent-managed BOMs -->
-    <jackson-2-bom.version>2.21.7</jackson-2-bom.version>
-    <jackson-bom.version>3.1.7</jackson-bom.version>
-    <!-- Logback CVE-2026-104721 (SiftingAppender) fixed in 1.6.5; Spring Boot 4.0.8 still manages 1.5.x -->
+    <jackson-2-bom.version>2.21.8</jackson-2-bom.version>
+    <jackson-bom.version>3.1.8</jackson-bom.version>
+    <!-- Logback CVE-2026-104721 (SiftingAppender) fixed in 1.6.5; Spring Boot 4.0.9 still manages 1.5.x -->
     <logback.version>1.6.5</logback.version>
     <!-- Guava CVE-2026-102554 fixed in 33.7.2-jre -->
     <guava.version>33.7.2-jre</guava.version>
