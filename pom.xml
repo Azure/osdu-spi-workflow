@@ -41,8 +41,7 @@
     <java.version>25</java.version>
     <maven.compiler.release>${java.version}</maven.compiler.release>
     <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
-    <!-- TODO: switch to os-core-common 10.0.0 (osdu/platform/system/lib/core/os-core-common!374, !375, !376) -->
-    <os-core-common.version>feat-jackson-3-SNAPSHOT</os-core-common.version>
+    <os-core-common.version>10.0.0</os-core-common.version>
     <openapi.version>3.0.3</openapi.version>
     <swagger-core.version>2.2.47</swagger-core.version>
     <json-smart.version>2.6.0</json-smart.version>
@@ -557,8 +556,7 @@
                     <exclude>org.opengroup.osdu:workflow-core</exclude>
                     <exclude>org.opengroup.osdu:workflow-core-plus</exclude>
                     <exclude>org.opengroup.osdu:workflow-azure</exclude>
-                    <!-- TODO: remove with os-core-common 10.0.0 (feat-jackson-3-SNAPSHOT until released) -->
-                    <exclude>org.opengroup.osdu:os-core-common</exclude>
+
                   </excludes>
                 </requireReleaseDeps>
               </rules>
