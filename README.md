@@ -381,7 +381,7 @@ in-flight Airflow 2 runs tracked on Airflow 2 while new runs go to Airflow 3.
   is set, the engine defaults to **`v1`** (Airflow 1 `api/experimental`), preserving the
   historical behaviour — a missing or `false` `osdu.airflow.version2` has always meant the
   Airflow 1 experimental API. Providers that want Airflow 2/3 set one of the two properties
-  explicitly (azure and core-plus ship `osdu.airflow.version=airflow2`). The legacy
+  explicitly (core-plus ships `osdu.airflow.version=airflow2`). The legacy
   `osdu.airflow.version2=true` continues to select Airflow 2.
 * The engine that starts a run (and the engine a DAG is created on) is persisted as the
   run's / workflow's engine owner. Status, log, delete and `latestInfo` reads are routed
@@ -402,16 +402,14 @@ in-flight Airflow 2 runs tracked on Airflow 2 while new runs go to Airflow 3.
 
 The `workflow-core` module provides the Airflow 3 building blocks for free: the AF3 `api/v2`
 client, JWT authentication, the per-run engine dispatcher, the engine-version model, and the
-SPI providers. Because each CSP with a custom provider (AWS, Azure) ships its own engine
-service and persistence layer, that wiring is done per provider. Azure is the reference
-implementation. The steps are:
+SPI providers. A CSP with a custom provider ships its own engine service and persistence
+layer, so that wiring is done per provider. The steps are:
 
 1. **Persist engine ownership** — add an `engineVersion` field to the provider's run and
    workflow storage models and repository mapping, so each run/workflow records which engine
    created it.
 2. **Wire per-run routing** — make the provider's engine service select the engine from each
-   run's persisted `engineVersion` (adopt the core dispatcher or replicate the Azure selector
-   pattern).
+   run's persisted `engineVersion` (adopt the core dispatcher).
 3. **Add AF3 config binding** — expose `osdu.airflow.version` and
    `osdu.airflow.airflow3.url/username/password` in the provider config, sourced from the CSP's
    secret store.
@@ -552,7 +550,7 @@ All the Swagger and OpenAPI related common properties are managed here [swagger.
 #### Server Url(full path vs relative path) configuration
 - `api.server.fullUrl.enabled=true` It will generate full server url in the OpenAPI swagger
 - `api.server.fullUrl.enabled=false` It will generate only the contextPath only
-- default value is false (Currently only in Azure it is enabled)
+- default value is false
 [Reference]:(https://springdoc.org/faq.html#_how_is_server_url_generated)
 
 ## Google Cloud implementation

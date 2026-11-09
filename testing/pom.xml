@@ -44,7 +44,6 @@
 
   <modules>
     <module>workflow-test-core</module>
-    <module>workflow-test-azure</module>
     <module>workflow-test-baremetal</module>
   </modules>
 
