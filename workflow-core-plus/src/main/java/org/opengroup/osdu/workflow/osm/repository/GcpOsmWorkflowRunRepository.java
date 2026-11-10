@@ -21,7 +21,6 @@ import static org.opengroup.osdu.core.osm.core.model.where.condition.And.and;
 import static org.opengroup.osdu.core.osm.core.model.where.predicate.Eq.eq;
 import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SINGLETON;
 
-import com.google.api.client.http.HttpStatusCodes;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -41,6 +40,7 @@ import org.opengroup.osdu.workflow.model.WorkflowRunsPage;
 import org.opengroup.osdu.workflow.config.WorkflowPropertiesConfiguration;
 import org.opengroup.osdu.workflow.osm.config.IDestinationProvider;
 import org.opengroup.osdu.workflow.provider.interfaces.IWorkflowRunRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
@@ -110,7 +110,7 @@ public class GcpOsmWorkflowRunRepository implements IWorkflowRunRepository {
                 workflowConfig.getWorkflowRunKind()),
             and(eq(WORKFLOW_NAME, workflowName), eq(RUN_ID, runId)));
       } catch (TranslatorException ex) {
-        throw new PersistenceException(HttpStatusCodes.STATUS_CODE_SERVER_ERROR,
+        throw new PersistenceException(HttpStatus.INTERNAL_SERVER_ERROR.value(),
             "Internal server error", ex.getMessage());
       }
     }
@@ -134,7 +134,7 @@ public class GcpOsmWorkflowRunRepository implements IWorkflowRunRepository {
         limit = Integer.parseInt((String) params.get(LIMIT_PARAM));
       } catch (NumberFormatException e) {
         throw new AppException(
-            HttpStatusCodes.STATUS_CODE_BAD_REQUEST,
+            HttpStatus.BAD_REQUEST.value(),
             "Not valid limit param format.",
             e.getMessage()
         );

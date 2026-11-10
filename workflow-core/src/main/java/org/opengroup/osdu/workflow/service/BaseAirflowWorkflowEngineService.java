@@ -17,9 +17,9 @@
 
 package org.opengroup.osdu.workflow.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -91,7 +91,7 @@ public abstract class BaseAirflowWorkflowEngineService extends AbstractAirflowWo
       log.error(
           "Unable to locate version in Airflow response. Airflow response: {}.", clientResponse);
       return Optional.of(NOT_AVAILABLE);
-    } catch (JsonProcessingException e) {
+    } catch (JacksonException e) {
       log.error(
           "Unable to Process(Parse, Generate) JSON value. Airflow response: {}.", clientResponse);
       return Optional.of(NOT_AVAILABLE);
