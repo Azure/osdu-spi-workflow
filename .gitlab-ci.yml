@@ -1,13 +1,6 @@
 variables:
   CORE_BUILD_SUBDIR: workflow-core
 
-  # Start azure specific variables
-  AZURE_SERVICE: ingestion-workfow
-  AZURE_BUILD_SUBDIR: provider/workflow-azure
-  AZURE_TEST_SUBDIR: testing/workflow-test-azure
-  AZURE_COVERAGE_THRESHOLD: $AZURE_CODE_COVERAGE_THRESHOLD
-  AZURE_HELM_SUBDIR: osdu-azure/workflow
-  # End azure specific variables
   ACCEPTANCE_TEST_DIR: "workflow-acceptance-test"
   EXPOSE_FEATUREFLAG_ENABLED: "false"
 
@@ -36,13 +29,7 @@ include:
     file: "publishing/pages.yml"
 
   - project: "osdu/platform/ci-cd-pipelines"
-    file: "cloud-providers/azure.yml"
-
-  - project: "osdu/platform/ci-cd-pipelines"
     file: "cloud-providers/cimpl-global.yml"
-
-  - project: "osdu/platform/ci-cd-pipelines"
-    file: "cloud-providers/azure-one-pipeline.yml"
 
   - local: "devops/core-plus/pipeline/override-stages.yml"
 
@@ -78,22 +65,3 @@ download_plugins:
   only:
     variables:
       - $CIMPL == '1'
-
-azure_containerize:
-  variables:
-    AZURE_CONTAINERIZE_REPOSITORY: "https://gitlab-ci-token:${CI_JOB_TOKEN}@community.opengroup.org/osdu/platform/deployment-and-operations/base-containers-azure/service-base-image"
-
-azure_test:
-  image: community.opengroup.org:5555/osdu/platform/deployment-and-operations/base-containers-azure/azure-maven17:v0.0.1
-
-# Install branch workflow-core into .m2 first so the standalone azure coverage build
-# resolves AF3 classes not yet in the cached core snapshot.
-azure_code_coverage:
-  script:
-    - mvn -B -Pcore -pl workflow-core -am install -DskipTests -Denforcer.skip=true
-    - mvn clean test jacoco:report -f $AZURE_BUILD_SUBDIR/pom.xml
-    - cat $AZURE_BUILD_SUBDIR/target/site/jacoco/index.html | grep -o '<tfoot>.*</tfoot>'
-    - coverageText=$(cat $AZURE_BUILD_SUBDIR/target/site/jacoco/index.html | grep -o 'Total[^%]*%' | sed 's/<.*>/ /; s/Total/Jacoco Coverage Total:/')
-    - coverageValue=$(echo $coverageText | grep -o -E "[0-9]+")
-    - echo "AZURE_COVERAGE=$coverageValue" >> azure_code_coverage.env
-    - echo "Code coverage obtained ${coverageValue}"

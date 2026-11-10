@@ -555,8 +555,6 @@
                     <exclude>org.opengroup.osdu:os-workflow</exclude>
                     <exclude>org.opengroup.osdu:workflow-core</exclude>
                     <exclude>org.opengroup.osdu:workflow-core-plus</exclude>
-                    <exclude>org.opengroup.osdu:workflow-azure</exclude>
-
                   </excludes>
                 </requireReleaseDeps>
               </rules>
@@ -657,12 +655,6 @@
       <modules>
         <module>workflow-core</module>
         <module>workflow-core-plus</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>azure</id>
-      <modules>
-        <module>provider/workflow-azure</module>
       </modules>
     </profile>
   </profiles>

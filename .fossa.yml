@@ -20,7 +20,3 @@ analyze:
       type: mvn
       target: workflow-core-plus/pom.xml
       path: .
-    - name: workflow-azure
-      type: mvn
-      target: provider/workflow-azure/pom.xml
-      path: .
