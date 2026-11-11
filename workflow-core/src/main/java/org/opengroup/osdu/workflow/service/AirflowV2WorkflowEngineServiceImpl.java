@@ -19,9 +19,9 @@ package org.opengroup.osdu.workflow.service;
 
 import static java.lang.String.format;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
@@ -80,7 +80,7 @@ public class AirflowV2WorkflowEngineServiceImpl extends BaseAirflowWorkflowEngin
 
       return new TriggerWorkflowResponse(executionDate, "", dagRunId);
 
-    } catch (JsonProcessingException e) {
+    } catch (JacksonException e) {
       log.info("Airflow response: {}.", airflowResponse);
       final String error = "Unable to Process(Parse, Generate) JSON value";
       throw new AppException(HttpStatus.INTERNAL_SERVER_ERROR.value(), error, e.getMessage());
