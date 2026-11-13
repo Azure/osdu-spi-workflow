@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.3.2](https://github.com/Azure/osdu-spi-workflow/compare/v1.3.1...v1.3.2) (2026-11-06)
+
+
+### 🐛 Bug Fixes
+
+* [Venus] Remove IBM provider code and CI/CD from Workflow ([#595](https://github.com/Azure/osdu-spi-workflow/issues/595)) ([e651215](https://github.com/Azure/osdu-spi-workflow/commit/e65121580cacd4f43a03f954788ad248e906ede4))
+* Sync upstream changes from eee83a54 ([80b609a](https://github.com/Azure/osdu-spi-workflow/commit/80b609ae4c8a05b835e659b61cb8199070121d99))
+* Sync upstream changes from fb2a589f ([83445e4](https://github.com/Azure/osdu-spi-workflow/commit/83445e4dda1f908e4722733d96bb07f3372720ff))
+
+
+### 🔧 Miscellaneous
+
+* Generate filtered upstream tree ([19fabf8](https://github.com/Azure/osdu-spi-workflow/commit/19fabf874a45d126273beff7138b54be2df8f229))
+* Generate filtered upstream tree ([357342b](https://github.com/Azure/osdu-spi-workflow/commit/357342b34ca8e785c319543173c7693d766afb61))
+* Sync template updates ([121a9cf](https://github.com/Azure/osdu-spi-workflow/commit/121a9cf0e54d102b04f3621767c409dcc3ae4030))
+* Sync template updates ([d76edbd](https://github.com/Azure/osdu-spi-workflow/commit/d76edbd5322caca32d46fc2a67ecb92f13f3439a))
+* Sync template updates ([62f2330](https://github.com/Azure/osdu-spi-workflow/commit/62f2330eec581a864b4237b5b736871b15162eb7))
+* Sync template updates ([e6ae89e](https://github.com/Azure/osdu-spi-workflow/commit/e6ae89eb303b6cf01c2c443e87114622b640eba3))
+* Sync template updates ([f498145](https://github.com/Azure/osdu-spi-workflow/commit/f49814554a44e42e262dd10c2cc13f50ce026b3f))
+* Sync template updates ([f5838f4](https://github.com/Azure/osdu-spi-workflow/commit/f5838f4ca6810d6ff586a812d4d89ea62463da08))
+* Sync template updates ([5cb5b6c](https://github.com/Azure/osdu-spi-workflow/commit/5cb5b6c740e18e6c73849cea35526ac8dbf37e6f))
+* Sync template updates ([cf111ee](https://github.com/Azure/osdu-spi-workflow/commit/cf111ee00531ed8b9198b96a6fda4f19d8447f1d))
+* **template-sync:** Sync template updates (updated 2026-10-27) ([1e96d7a](https://github.com/Azure/osdu-spi-workflow/commit/1e96d7a0bcc34a07cbc102188a1901edbe990a1a))
+* **template-sync:** Sync template updates (updated 2026-11-02) ([9c74a7e](https://github.com/Azure/osdu-spi-workflow/commit/9c74a7e362e16657b7d012d96783f4908b23078b))
+* **template-sync:** Sync template updates (updated 2026-11-04) ([2bb379a](https://github.com/Azure/osdu-spi-workflow/commit/2bb379a6b9a5412e355eadc6fc54187fee6aaca7))
+* **template-sync:** Sync template updates 2026-10-27 ([12c0351](https://github.com/Azure/osdu-spi-workflow/commit/12c0351c6c658a084bd7dcf440fb65abf0ffc034))
+* **template-sync:** Sync template updates 2026-10-30 ([5668874](https://github.com/Azure/osdu-spi-workflow/commit/56688744e64062be19459e58913f91ae3e6a5904))
+* **template-sync:** Sync template updates 2026-11-02 ([c97959a](https://github.com/Azure/osdu-spi-workflow/commit/c97959a17e593170663e8b4cfd09cc815ca1c952))
+* **template-sync:** Sync template updates 2026-11-05 ([0cbb6ac](https://github.com/Azure/osdu-spi-workflow/commit/0cbb6ace6ed0aecc85a12a4bec5bd032c6195149))
+* **template-sync:** Sync template updates 2026-11-06 ([4467559](https://github.com/Azure/osdu-spi-workflow/commit/4467559797d57aa477af7e23d9f2796b72fc3765))
+* Update NOTICE from fossa-check-notice ([a4df8c5](https://github.com/Azure/osdu-spi-workflow/commit/a4df8c5c9d58ec93163c5582dd01aa38c8b0f109))
+
 ## [1.3.1](https://github.com/Azure/osdu-spi-workflow/compare/v1.3.0...v1.3.1) (2026-10-23)
 
 
