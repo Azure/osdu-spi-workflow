@@ -20,10 +20,10 @@ package org.opengroup.osdu.workflow.service;
 import static java.lang.String.format;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.node.ObjectNode;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -101,7 +101,7 @@ public abstract class BaseAirflowWorkflowEngineExtension implements IWorkflowEng
       ObjectNode taskJson = om.convertValue(latestTask, ObjectNode.class);
       taskJson.set(XCOM_RESP, xcomKeyValJson);
       return taskJson;
-    } catch (JsonProcessingException e) {
+    } catch (JacksonException e) {
       log.error("Unable to process Airflow response.", e);
       final String error = "Unable to Process(Parse, Generate) JSON value";
       throw new AppException(HttpStatus.INTERNAL_SERVER_ERROR.value(), error, e.getMessage());
@@ -109,7 +109,7 @@ public abstract class BaseAirflowWorkflowEngineExtension implements IWorkflowEng
   }
 
   private List<Map<String, String>> getDagRunTasks(String dagName, String runId)
-      throws JsonProcessingException {
+      throws JacksonException {
     String taskInstancesEndpoint =
         format(
             taskInstancesEndpointTemplate(), encodePathSegment(dagName), encodePathSegment(runId));
@@ -137,7 +137,7 @@ public abstract class BaseAirflowWorkflowEngineExtension implements IWorkflowEng
   }
 
   private List<String> getTaskXcomKeys(String dagName, String runId, String latestTaskId)
-      throws JsonProcessingException {
+      throws JacksonException {
     String taskXcomEntriesEndpoint =
         format(
             xcomEntriesEndpointTemplate(),
@@ -169,7 +169,7 @@ public abstract class BaseAirflowWorkflowEngineExtension implements IWorkflowEng
 
   private Map<String, String> getXcomKeyValues(
       String dagName, String runId, String latestTaskId, List<String> xcomKeys)
-      throws JsonProcessingException {
+      throws JacksonException {
     String xcomValErrMsg = format(GET_XCOM_VALUES_ERROR_MESSAGE, latestTaskId);
     Map<String, String> xcomKeyVal = new HashMap<>();
     for (String xcomKey : xcomKeys) {

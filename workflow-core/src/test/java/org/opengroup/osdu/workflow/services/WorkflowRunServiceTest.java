@@ -13,7 +13,9 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -72,7 +74,8 @@ class WorkflowRunServiceTest {
   private static final String USER_EMAIL = "user@email.com";
   private static final String TEST_CURSOR = "test-cursor";
   private static final String EXECUTION_DATE = "2021-01-05T11:36:45+00:00";
-  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+  private static final ObjectMapper OBJECT_MAPPER = JsonMapper.builder()
+      .disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES).build();
   private static final String USER_ID = "dummy-user-id";
   private static final String WORKFLOW_METADATA = "{\n" +
       "  \"workflowId\": \"some-dag-name\",\n" +

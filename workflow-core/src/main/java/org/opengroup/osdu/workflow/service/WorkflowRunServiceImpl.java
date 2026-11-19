@@ -31,7 +31,7 @@ import static org.opengroup.osdu.workflow.logging.LoggerUtils.getTruncatedData;
 import static org.opengroup.osdu.workflow.model.WorkflowStatusType.getActiveStatusTypes;
 import static org.opengroup.osdu.workflow.model.WorkflowStatusType.getCompletedStatusTypes;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
