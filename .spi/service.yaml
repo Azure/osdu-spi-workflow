@@ -2,6 +2,8 @@ schemaVersion: 3
 service:
   name: workflow
   archetype: java-maven-azure
+componentGovernance:
+  upstream: https://community.opengroup.org/osdu/platform/data-flow/ingestion/ingestion-workflow
 tests:
   acceptance:
     type: maven
