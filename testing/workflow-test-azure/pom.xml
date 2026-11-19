@@ -33,9 +33,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.main.basedir>${project.basedir}</project.main.basedir>
-        <jackson.version>2.13.5</jackson.version>
+        <jackson.version>2.18.11</jackson.version>
         <skipTests>false</skipTests>
           </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.opengroup.osdu</groupId>
@@ -84,7 +95,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
+            <version>33.7.2-jre</version>
             <scope>test</scope>
         </dependency>
     <!-- Added dependency of core-lib-Azure to add Azure Service Principle class -->
@@ -112,7 +123,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
-      <version>4.1.139.Final</version>
+      <version>4.1.140.Final</version>
     </dependency>
     <dependency>
       <groupId>org.opengroup.osdu</groupId>
