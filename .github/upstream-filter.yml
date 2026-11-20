@@ -22,7 +22,7 @@ top_level:
   .trufflehog-exclude: strip
   Dockerfile: strip
   LICENSE: keep
-  NOTICE: keep
+  NOTICE: strip
   README.md: strip
   docs: keep
   img: keep
