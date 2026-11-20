@@ -1,5 +1,62 @@
 # Changelog
 
+## [1.3.2](https://github.com/Azure/osdu-spi-workflow/compare/v1.3.1...v1.3.2) (2026-11-20)
+
+
+### 🐛 Bug Fixes
+
+* [Venus] Remove IBM provider code and CI/CD from Workflow ([#595](https://github.com/Azure/osdu-spi-workflow/issues/595)) ([e651215](https://github.com/Azure/osdu-spi-workflow/commit/e65121580cacd4f43a03f954788ad248e906ede4))
+* Point CODEOWNERS at @Azure/osdu-spi ([4920420](https://github.com/Azure/osdu-spi-workflow/commit/4920420d36519488adef62debdec811d12a38571))
+* Set codeowners team to @Azure/osdu-spi ([cfa62ed](https://github.com/Azure/osdu-spi-workflow/commit/cfa62edf4cf79e12d36df5938d876543bcc72bc4))
+* Sync upstream changes from 011d8007 ([2ddf326](https://github.com/Azure/osdu-spi-workflow/commit/2ddf3266a0fa98e2bf06f5ae88f45dc28245d5f3))
+* Sync upstream changes from eee83a54 ([80b609a](https://github.com/Azure/osdu-spi-workflow/commit/80b609ae4c8a05b835e659b61cb8199070121d99))
+* Sync upstream changes from fb2a589f ([83445e4](https://github.com/Azure/osdu-spi-workflow/commit/83445e4dda1f908e4722733d96bb07f3372720ff))
+
+
+### 🔧 Miscellaneous
+
+* Declare component governance inputs ([c2c313d](https://github.com/Azure/osdu-spi-workflow/commit/c2c313dc8dafebb29cf708ea4eac8afe88903834))
+* Declare component governance inputs ([3c44b37](https://github.com/Azure/osdu-spi-workflow/commit/3c44b37f4235e87b21c5abdc8e166c5e0febcba2))
+* Generate filtered upstream tree ([f902ba8](https://github.com/Azure/osdu-spi-workflow/commit/f902ba81485243779d9f330e89d38f09c848f3b3))
+* Generate filtered upstream tree ([19fabf8](https://github.com/Azure/osdu-spi-workflow/commit/19fabf874a45d126273beff7138b54be2df8f229))
+* Generate filtered upstream tree ([357342b](https://github.com/Azure/osdu-spi-workflow/commit/357342b34ca8e785c319543173c7693d766afb61))
+* **notice:** Refresh NOTICE from Component Governance ([8657cfc](https://github.com/Azure/osdu-spi-workflow/commit/8657cfc90f63d8746c27a50cb4f1b37bf431e393))
+* **notice:** Refresh NOTICE from Component Governance ([7b3a66a](https://github.com/Azure/osdu-spi-workflow/commit/7b3a66a8e650072da97a1c5a6129b63b419b4313))
+* Regenerate NOTICE after master merge ([5ba1b90](https://github.com/Azure/osdu-spi-workflow/commit/5ba1b906952d7d9809fd8a83e0ae6acd23cb94be))
+* Remove Azure provider and Azure CI/CD ([ace7b29](https://github.com/Azure/osdu-spi-workflow/commit/ace7b290941b43ef91c81f86cf3e63550e302dc5))
+* Remove Azure provider and Azure CI/CD ([a43a3c6](https://github.com/Azure/osdu-spi-workflow/commit/a43a3c64d573f04d13ba9b1d24ed205cbfca33c2))
+* Sync template updates ([bbf9c72](https://github.com/Azure/osdu-spi-workflow/commit/bbf9c725abbbdbbf27a19bbc43712f1a4eb01166))
+* Sync template updates ([d059675](https://github.com/Azure/osdu-spi-workflow/commit/d059675eb6b9790d218b57844ec88601f2dc67fa))
+* Sync template updates ([121a9cf](https://github.com/Azure/osdu-spi-workflow/commit/121a9cf0e54d102b04f3621767c409dcc3ae4030))
+* Sync template updates ([d76edbd](https://github.com/Azure/osdu-spi-workflow/commit/d76edbd5322caca32d46fc2a67ecb92f13f3439a))
+* Sync template updates ([62f2330](https://github.com/Azure/osdu-spi-workflow/commit/62f2330eec581a864b4237b5b736871b15162eb7))
+* Sync template updates ([e6ae89e](https://github.com/Azure/osdu-spi-workflow/commit/e6ae89eb303b6cf01c2c443e87114622b640eba3))
+* Sync template updates ([f498145](https://github.com/Azure/osdu-spi-workflow/commit/f49814554a44e42e262dd10c2cc13f50ce026b3f))
+* Sync template updates ([f5838f4](https://github.com/Azure/osdu-spi-workflow/commit/f5838f4ca6810d6ff586a812d4d89ea62463da08))
+* Sync template updates ([5cb5b6c](https://github.com/Azure/osdu-spi-workflow/commit/5cb5b6c740e18e6c73849cea35526ac8dbf37e6f))
+* Sync template updates ([cf111ee](https://github.com/Azure/osdu-spi-workflow/commit/cf111ee00531ed8b9198b96a6fda4f19d8447f1d))
+* **template-sync:** Sync template updates (updated 2026-10-27) ([1e96d7a](https://github.com/Azure/osdu-spi-workflow/commit/1e96d7a0bcc34a07cbc102188a1901edbe990a1a))
+* **template-sync:** Sync template updates (updated 2026-11-02) ([9c74a7e](https://github.com/Azure/osdu-spi-workflow/commit/9c74a7e362e16657b7d012d96783f4908b23078b))
+* **template-sync:** Sync template updates (updated 2026-11-04) ([2bb379a](https://github.com/Azure/osdu-spi-workflow/commit/2bb379a6b9a5412e355eadc6fc54187fee6aaca7))
+* **template-sync:** Sync template updates (updated 2026-11-13) ([b5648ab](https://github.com/Azure/osdu-spi-workflow/commit/b5648ab4af812aa7587fa006f7dfada9d9231dd5))
+* **template-sync:** Sync template updates (updated 2026-11-19) ([e141aaf](https://github.com/Azure/osdu-spi-workflow/commit/e141aafc42bddbfb098f3a848a5eb0f77d30de3d))
+* **template-sync:** Sync template updates 2026-10-27 ([12c0351](https://github.com/Azure/osdu-spi-workflow/commit/12c0351c6c658a084bd7dcf440fb65abf0ffc034))
+* **template-sync:** Sync template updates 2026-10-30 ([5668874](https://github.com/Azure/osdu-spi-workflow/commit/56688744e64062be19459e58913f91ae3e6a5904))
+* **template-sync:** Sync template updates 2026-11-02 ([c97959a](https://github.com/Azure/osdu-spi-workflow/commit/c97959a17e593170663e8b4cfd09cc815ca1c952))
+* **template-sync:** Sync template updates 2026-11-05 ([0cbb6ac](https://github.com/Azure/osdu-spi-workflow/commit/0cbb6ace6ed0aecc85a12a4bec5bd032c6195149))
+* **template-sync:** Sync template updates 2026-11-06 ([4467559](https://github.com/Azure/osdu-spi-workflow/commit/4467559797d57aa477af7e23d9f2796b72fc3765))
+* Update NOTICE from fossa-check-notice ([a4df8c5](https://github.com/Azure/osdu-spi-workflow/commit/a4df8c5c9d58ec93163c5582dd01aa38c8b0f109))
+
+
+### 🔨 Build System
+
+* **deps:** Bump core-lib-azure to 5.0.0 and migrate tests ([483c7f0](https://github.com/Azure/osdu-spi-workflow/commit/483c7f0c99cf449c8a6c335f093f9a41a2fb5ce2))
+* **deps:** Bump io.netty:netty-all from 4.1.140.Final to 4.1.141.Final in /testing/workflow-test-azure ([876304b](https://github.com/Azure/osdu-spi-workflow/commit/876304b7b1949b18207e9c899dd490a8b56583d9))
+* **deps:** Bump io.netty:netty-all in /testing/workflow-test-azure ([0f40bf7](https://github.com/Azure/osdu-spi-workflow/commit/0f40bf75b2a0c4ace0047206446e923acabb2f86))
+* **deps:** Bump jackson, guava, and netty in azure tests ([c0bf3d6](https://github.com/Azure/osdu-spi-workflow/commit/c0bf3d6c4fbc731c8ff126d3220ff5341d607906))
+* **deps:** Bump jackson, guava, and netty in azure tests ([c348868](https://github.com/Azure/osdu-spi-workflow/commit/c3488688d7dce70e78de736a54c444973ca39ab4))
+* **deps:** Import jackson-bom in azure test pom ([35ee315](https://github.com/Azure/osdu-spi-workflow/commit/35ee315487f0a0fe0e71e1bded3133f86bfe9573))
+
 ## [1.3.1](https://github.com/Azure/osdu-spi-workflow/compare/v1.3.0...v1.3.1) (2026-10-23)
 
 
