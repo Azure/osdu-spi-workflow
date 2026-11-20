@@ -1,0 +1,33 @@
+{
+  "properties": {
+    "helpUri": "https://eng.ms/docs/microsoft-security/security/azure-security/cloudai-security-fundamentals-engineering/security-integration/guardian-wiki/microsoft-guardian/general/baselines"
+  },
+  "version": "1.0.0",
+  "baselines": {
+    "default": {
+      "name": "default",
+      "createdDate": "2026-11-20 03:32:08Z",
+      "lastUpdatedDate": "2026-11-20 03:32:08Z"
+    }
+  },
+  "results": {
+    "c7a7526a628559fb640ffccf420de029f0691e33f418709d54186b0643775e6d": {
+      "signature": "c7a7526a628559fb640ffccf420de029f0691e33f418709d54186b0643775e6d",
+      "alternativeSignatures": [
+        "be04bc116d0068bfdda117b69d757422e7183efc7228c9a3b85bf4bb2a210279",
+        "983bd5031df4c0e5fd4dc10c1f6bf902709134dece48328a0d7049416f07a3c1"
+      ],
+      "target": "workflow-core/src/test/java/org/opengroup/osdu/workflow/service/spi/BasicAuthAirflowConfigServiceProviderTest.java",
+      "line": 46,
+      "uriBaseId": "file:///mnt/vss/_work/1/s/workflow-core/src/test/java/org/opengroup/osdu/workflow/service/spi%5CBasicAuthAirflowConfigServiceProviderTest.java",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0030",
+      "createdDate": "2026-11-20 03:32:08Z",
+      "expirationDate": "2027-05-09 03:45:27Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-11-20 03:45:27Z"
+    }
+  }
+}
