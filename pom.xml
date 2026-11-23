@@ -55,7 +55,7 @@
     <!-- os-core-common declares lettuce-core as provided; CVE-2025-58057 requires >= 7.5.2.RELEASE -->
     <lettuce.version>7.5.2.RELEASE</lettuce.version>
     <!-- lettuce-core 7.x requires Netty 4.2+; 4.2.18.Final addresses High findings still present on 4.2.16/4.2.17 -->
-    <netty.version>4.2.19.Final</netty.version>
+    <netty.version>4.2.21.Final</netty.version>
     <!-- Patched Jackson 2 (third-party SDKs) and Jackson 3 (Spring Boot 4 default); these are the
          spring-boot-dependencies property names, so they also override the parent-managed BOMs -->
     <jackson-2-bom.version>2.21.8</jackson-2-bom.version>
