@@ -61,7 +61,7 @@
     <jackson-2-bom.version>2.21.8</jackson-2-bom.version>
     <jackson-bom.version>3.1.8</jackson-bom.version>
     <!-- Logback CVE-2026-104721 (SiftingAppender) fixed in 1.6.5; Spring Boot 4.0.9 still manages 1.5.x -->
-    <logback.version>1.6.5</logback.version>
+    <logback.version>1.6.8</logback.version>
     <!-- Guava CVE-2026-102554 fixed in 33.7.2-jre -->
     <guava.version>33.7.2-jre</guava.version>
     <!-- Nested spring-boot-dependencies → mockito-bom ignores consumer mockito.version; pin explicitly.
