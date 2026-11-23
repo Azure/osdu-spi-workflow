@@ -46,7 +46,7 @@
     <swagger-core.version>2.2.47</swagger-core.version>
     <json-smart.version>2.6.0</json-smart.version>
     <!-- Spring Framework 7.0.9 fixes CVE-2026-47884 / CVE-2026-47890 (no 6.2.x fix) -->
-    <spring-framework.version>7.0.10</spring-framework.version>
+    <spring-framework.version>7.0.11</spring-framework.version>
     <!-- spring-boot.version must match the parent version -->
     <spring-boot.version>4.0.9</spring-boot.version>
     <spring-security.version>7.0.7</spring-security.version>
