@@ -25,6 +25,7 @@ import static org.opengroup.osdu.workflow.service.spi.BasicAuthAirflowConfigServ
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -44,7 +45,7 @@ class BasicAuthAirflowConfigServiceProviderTest {
   private static final String TEST_URL = "https://url.com";
   private static final String HTTP_TEST_URL = "http://url.com";
   private static final String TEST_USERNAME = "testuser";
-  private static final String TEST_PASSWORD = "s3cret";
+  private static final String TEST_PASSWORD = UUID.randomUUID().toString();
   private static final String BASIC_AUTH1 = "BasicAuth";
   private static final String BASIC_AUTH2 = "basicauth";
   private static final String BASIC_AUTH3 = "BASICAUTH";
